@@ -6,11 +6,9 @@ A starter structure for project documentation. Copy these files into your projec
 
 - **[Project Overview](Project-Overview.md)**
 - **[Project Management](Project-Management/README.md)** — sprint reports and project status.
-- **[Architecture Overview](Architecture-Overview.md)**
-- **[Feature Catalogue](Feature-Catalogue/README.md)** — with a [Feature Page Template](Feature-Catalogue/Feature-Page-Template.md) to copy per feature.
-- **[Developer Documentation](Developer-Documentation.md)**
+- **[Developer Documentation](Developer-Documentation/README.md)**
 - **[Testing](Testing.md)**
-- **[Integrations](Integrations.md)**
+- **[Feature Catalogue](Feature-Catalogue/README.md)**
 - **[Glossary](Glossary.md)**
 
 See [Documentation Principles](Documentation-Principles.md) for how to write the docs.
