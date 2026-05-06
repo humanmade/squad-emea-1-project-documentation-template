@@ -1,6 +1,6 @@
 # Testing
 
-**Summary.** How testing happens on the project — code-level tests, QA, browser and device coverage, accessibility.
+**Summary.** How testing happens on the project — code-level tests, QA, browser and device coverage, performance, and accessibility.
 
 ## Test layers
 
@@ -22,9 +22,21 @@ Manual testing approach, acceptance criteria, who signs off.
 
 Supported browsers and devices, testing tools, known caveats.
 
+## Performance
+
+*[Define targets — e.g. Core Web Vitals thresholds, Lighthouse score ranges, or a statement that scores are directional only. Specify whether targets are per-environment or production-only.]*
+
+Tools and how to run them: *[e.g. Lighthouse CLI, PageSpeed Insights, WebPageTest, browser DevTools]*
+
+What triggers a performance review: *[e.g. any PR touching critical rendering path, or on a scheduled cadence]*
+
 ## Accessibility
 
-Standards (e.g. WCAG 2.2 AA), how compliance is tested, who reviews.
+*[Define the standard — e.g. WCAG 2.2 AA — and what is in scope per ticket vs. what requires a dedicated accessibility audit.]*
+
+Tools and how to run them: *[e.g. Axe, Lighthouse accessibility audit, screen reader testing, keyboard-only walkthrough]*
+
+Who reviews and signs off: *[e.g. engineer self-review, dedicated QA pass, third-party audit cadence]*
 
 ## CI integration
 

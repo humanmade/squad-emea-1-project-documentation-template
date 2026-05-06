@@ -2,6 +2,10 @@
 
 **The technical detail engineers need to work on the project effectively.** Conventions, processes, and decisions for working on the codebase day to day.
 
+## Onboarding
+
+See [Onboarding](Onboarding.md) for the full engineer onboarding guide — prerequisites, local setup, first reading, and who to ask for what.
+
 ## Local environment
 
 How to get the project running locally — prerequisites, install commands, first-run steps, required env vars, mock services, sample content, gotchas.
@@ -32,25 +36,9 @@ The pipeline from commit to production — stages, tools, triggers, artefacts. W
 
 How Composer (PHP) and npm (JavaScript) dependencies are managed. Lock file policy. Update cadence — when and how dependencies are reviewed and updated. How we hear about vulnerabilities, how quickly we respond, who owns it.
 
-## Onboarding
-
-Checklist for engineers new to the project.
-
-**Day one**
-
-- Repo access.
-- Local environment running.
-- Read the [Project overview](Project-Overview.md) and [Architecture overview](Architecture-Overview.md).
-
-**First week**
-
-- Pair on a small ticket.
-- Read through the [Feature catalogue](Feature-Catalogue/README.md).
-
-**Tools & accounts to request**
-
-List of accounts, channels, and tools the engineer will need.
-
 ## Related
 
 - [Architecture overview](Architecture-Overview.md)
+- [Onboarding](Onboarding.md)
+- [Deployment](Deployment.md)
+- [ADR](../ADR/README.md)
