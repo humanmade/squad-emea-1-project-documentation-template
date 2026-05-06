@@ -7,6 +7,12 @@
 4. **Outcome focused.** Lead with the outcome, deliverable, or decision. Describe what it does and what it enables before explaining how it is implemented or managed.
 5. **Make decisions visible.** Document the choices that shape the system, even when they rely on existing tools or plugins. Do not assume these are self-evident. Explain what was chosen and why.
 6. **Living, not finished.** Out-of-date docs are worse than missing docs. Prune aggressively.
+7. **Step-by-step instructions.** Be precise and sequential. One action per step. Don't assume the reader will infer what order to do things in.
+8. **Respect the reader's time** Don't repeat what was just said. Don't write a preamble before saying the thing. Get to the point.
+
+### Code examples
+
+Let the code speak. Keep examples minimal — enough to illustrate the point, nothing more. Add a prose line explaining what the example demonstrates if it isn't immediately obvious from the code itself.
 
 ## Tone and voice
 
@@ -16,6 +22,14 @@
 4. **Measured tone.** Keep a professional tone without sounding formal or distant. Avoid chatty or overly conversational language. Use “we” sparingly.
 5. **Be precise.** Use consistent terminology. Follow the glossary. If a term does not exist, add it rather than inventing alternatives.
 6. **Acknowledge trade-offs.** State constraints and limitations where they matter. Do not present decisions as universally correct.
+7. **Not cheerful.** Avoid exclamation marks, emoji, or motivational asides.
+8. **Not academic.** No passive constructions where active ones work better.
+
+## Tense and person
+
+- Use second person ("you") when addressing the reader directly.
+- Use present tense for describing how things work.
+- Use imperative mood for instructions: "Add the block", not "You should add the block".
 
 ## Anti-patterns
 
@@ -23,3 +37,5 @@
 - Do not narrate actions the reader can infer from code or headings
 - Do not repeat information already defined elsewhere
 - Do not introduce new terminology for existing concepts — use the glossary
+- Hedging. Don't soften every statement with "typically", "usually", or "in most cases" unless genuine variation exists.
+- Terse to the point of ambiguity. Brevity is the goal, not minimalism at the cost of understanding.
