@@ -2,9 +2,11 @@
 
 A starter structure for project documentation. Copy these files into your project's wiki, docs folder, or wherever your team's docs live; fill in the placeholders; adapt as needed.
 
+> **About this README.** This file documents the template and the skill — not a project. When the structure lives inside a real project, [Project Overview](Project-Overview.md) is the documentation entrypoint. In your project copy, replace this README with the project's own, or rename `Project-Overview.md` to `README.md` so GitHub renders it as the docs home automatically.
+
 ## What's in the template
 
-- **[Project Overview](Project-Overview.md)**
+- **[Project Overview](Project-Overview.md)** — the home page of the project's documentation.
 - **[Project Management](Project-Management/README.md)** — sprint reports and project status.
 - **[Developer Documentation](Developer-Documentation/README.md)** — local setup, standards, branching, and build.
   - [Onboarding](Developer-Documentation/Onboarding.md)

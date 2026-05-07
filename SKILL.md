@@ -9,11 +9,9 @@ This skill creates project documentation for Human Made WordPress projects using
 
 ## Before you start
 
-Read these two files from this directory before doing anything else — they govern the style, tone, and quality of every document you produce:
+Read **`Documentation-Principles.md`** from this directory before doing anything else. It governs the style, tone, and quality of every document — concise, outcome-focused, direct, no filler, consistent terminology, and the anti-patterns to avoid.
 
-- **`Documentation-Principles.md`** — what good documentation looks like, and how to write it: concise, outcome-focused, direct, no filler, consistent terminology. Includes tone guidance and anti-patterns to avoid.
-
-The template files for each document type also live alongside this SKILL.md. Read the relevant template immediately before drafting that document — not all upfront.
+The template files for each document type live alongside this SKILL.md. Read the relevant template immediately before drafting that document — not all upfront. Each template's structure and section descriptions tell you what that document needs to cover.
 
 **Core principle:** Work interactively. Draft one document at a time, present it, get feedback, then move on. Never invent details — if you don't have the information for a section, leave the placeholder in place and flag it clearly.
 
@@ -21,36 +19,35 @@ The template files for each document type also live alongside this SKILL.md. Rea
 
 ## Phase 1: Project intake
 
-Before generating anything, gather the core project context. Ask these as a single grouped message — not one question at a time:
+Ask these two questions up front, every time:
 
-- **Client name** and industry
-- **Project purpose** — what the site does and who it serves
-- **Hosting platform** — e.g. WordPress VIP, Altis, WP Engine, Kinsta
-- **WordPress and PHP versions** (if known)
-- **Repo URL** (if available)
-- **Issue tracker** — Jira project key, Linear workspace, GitHub project, etc.
-- **Figma or design system link** (if available)
 - **Where will the documentation live?** — project repo (default), GitHub Wiki, Confluence, or somewhere else. This affects structure and formatting (see Output section).
-- **Is there any existing documentation?** — if so, ask the user to share it or point you at it. Read it before generating anything. The goal is to carry all existing content forward into the new structure — nothing should be lost. Warn the user upfront that page paths or URLs may change as content is reorganised.
+- **Is there any existing documentation?** — if yes, ask the user to share it or point you at it, and read it before generating anything. Carry all existing content forward into the new structure; nothing should be lost. Warn the user upfront that page paths or URLs may change as content is reorganised.
 
-If the user can share a project brief, existing spec, or prior documentation, ask for it — it will answer most of these questions faster than the intake.
+Then infer the rest from the codebase: tech stack from `composer.json` and `package.json`, hosting from deployment configs, repo URL from git, issue tracker and project purpose from the README. If you can't see the codebase, ask for the repo URL so you can fetch this context.
+
+Only ask the user for what you can't infer — typically client name and stakeholders, design links, success metrics or KPIs.
 
 ---
 
 ## Phase 2: Decide what to create
 
-After intake, ask which documents to create. Default recommendation: start with **Project Overview** and **Architecture Overview** — they establish the facts that inform everything else.
+Start from what already exists. If existing documentation was provided in intake, work from it: map content to the new structure (see [Migrating existing documentation](#migrating-existing-documentation)) and consolidate where the same thing lives in multiple places. Only generate what's missing or specifically asked for.
 
-Present the full list so the user can pick:
+**Project Overview is mandatory.** It's the home page of the documentation. If it doesn't exist, draft it first.
 
-- Project Overview
+**ADRs are different.** Ask explicitly whether the project records decisions as ADRs, or infer from existing docs if an ADR folder is already there. If yes, ADRs get added going forward — one per decision as it's made. Don't try to retrospectively document old decisions; the team rarely has good answers and the result is archaeology, not documentation.
+
+For everything else, ask the user which they want. Don't generate by default — sparse is better than padded.
+
+Optional documents:
+
 - Architecture Overview
 - Developer Documentation (README)
 - Onboarding
 - Deployment
 - Testing
 - Feature Catalogue entry *(ask: which feature?)*
-- ADR *(ask: which decision?)*
 - Glossary
 - Risk Log
 - Definition of Done
@@ -62,84 +59,26 @@ Present the full list so the user can pick:
 
 For each document the user wants:
 
-1. Read the relevant template file from this directory.
-2. Ask any document-specific questions needed (see below) before drafting.
-4. Replace all placeholders with real content. Remove sections that don't apply — sparse or deleted sections are better than empty ones.
-5. Present the draft. Ask for feedback before moving to the next document.
+1. Read the relevant template file. Its structure and section descriptions show what the document needs to cover.
+2. Identify which placeholders the intake didn't already answer. Ask only those follow-up questions — don't repeat the intake.
+3. Draft the document, replacing placeholders with real content. Remove sections that don't apply; sparse or deleted sections are better than empty ones.
+4. Present the draft. Ask for feedback before moving to the next document.
 
-### Document-specific questions
-
-**Project Overview**
-- Who are the HM and client points of contact?
-- What does success look like — business outcomes, KPIs?
-- Any brand, editorial, or accessibility values that shape the work?
-- Known constraints: budget, timeline, technology, legacy systems?
-
-**Architecture Overview**
-- Full tech stack: WordPress version, PHP, key plugins, build tooling?
-- Third-party services or integrations (search, CRM, analytics, payments, media)?
-- Hosting and CDN setup, environments?
-- Any architectural decisions that deviate from HM defaults (see below)?
-
-**Feature Catalogue entry**
-- Feature name and one-line summary.
-- Who uses it: editors, end users, admins, external systems?
-- How is it built? Work through in HM priority order:
-  1. Native WordPress: CPTs, taxonomies, blocks, patterns, templates, theme.json, block bindings, block styles
-  2. Custom theme code: template parts, block variations, hooks
-  3. Custom blocks or plugins: only if native wasn't sufficient — document *why*
-  4. Third-party plugins or services
-- Known limitations, gotchas, or accessibility considerations?
-
-**ADR**
-- What decision is being recorded?
-- What was the context — what requirement or problem prompted it?
-- What alternatives were considered, and why ruled out?
-- What are the consequences or trade-offs going forward?
-
-**Deployment**
-- Does this project follow the standard HM branch model (main / production / dev)?
-- Any non-standard environments or deploy steps?
-- Standard GitHub Actions label-based deploys, or a different CI/CD setup?
-- Who approves production deploys?
-
----
-
-## HM defaults
-
-Apply these unless the project specifies otherwise. Mention deviations explicitly in the relevant document.
-
-**WordPress approach**
-- Native WordPress first: CPTs, taxonomies, core blocks, patterns, templates, theme.json, block bindings, block styles before any custom code
-- Block editor first: custom blocks only when native WordPress functionality won't do it — always document why in the Feature Catalogue
-
-**Coding standards**
-- WordPress core coding standards
-- WordPress.com VIP guidelines
-- Composer for PHP dependencies, npm for JavaScript; lock files committed
-
-**Branching model**
-- `main` — default; always deployable; feature branches cut from here
-- `production` — live site; deploy by PR from main; no re-review needed if checks pass
-- `dev` — integration environment; reset to main periodically
-- Feature branches prefixed with ticket number: `XXX-123-feature-name`
-- Hotfixes branched from `production`: `hotfix-XXX`
-
-**Deployments**
-- GitHub Actions triggered by PR labels: `Push to staging`, `Push to dev`
-- Merge to `production` triggers production deploy (or manual step if hosting requires it)
-
-**Releases**
-- Semantic versioning: MAJOR.MINOR.PATCH
-- PR from main into production titled `Release X.X.X`
-- GitHub Release with auto-generated changelog after merge
-- Share version and changelog with client before deploying
+The templates encode HM defaults — branching model in `Deployment.md`, native-WordPress-first principles in `Architecture-Overview.md` and the Feature Catalogue, coding standards in `Developer-Documentation/README.md`, and so on. Apply those defaults when the project doesn't specify otherwise, and flag any deviation explicitly in the relevant document.
 
 ---
 
 ## Output
 
 Generate documents as Markdown. Present one document at a time. If the user wants to save files, ask where the project docs live and write them there directly.
+
+### Documentation entrypoint
+
+`Project-Overview.md` is the entrypoint for a project's documentation — not the template's own `README.md`. When scaffolding into a project:
+
+- Do not carry forward the template's `README.md`. It documents the template itself, not the project.
+- If the docs sit somewhere GitHub auto-renders `README.md` (a `docs/` folder, repo root, or section folder), suggest renaming `Project-Overview.md` to `README.md` so it becomes the rendered landing page.
+- Otherwise, link to `Project-Overview.md` from the project's existing `README.md` so newcomers can find it.
 
 ### Platform-specific adjustments
 
