@@ -2,9 +2,21 @@
 
 **The technical detail engineers need to work on the project effectively.** Conventions, processes, and decisions for working on the codebase day to day.
 
-## Onboarding
+## In this section
 
-See [Onboarding](Onboarding.md) for the full engineer onboarding guide — prerequisites, local setup, first reading, and who to ask for what.
+- [Developer documentation](README.md)
+  - [Local environment](#local-environment)
+  - [Coding standards](#coding-standards)
+  - [Code review](#code-review)
+  - [Testing](#testing)
+  - [Branching & release](#branching--release)
+  - [Build & deploy](#build--deploy)
+  - [Dependency management](#dependency-management)
+  - [Related](#related)
+- [Architecture overview](Architecture-Overview.md)
+- [Onboarding](Onboarding.md)
+- [Deployment](Deployment.md)
+- [Integrations](Integrations.md)
 
 ## Local environment
 
@@ -18,11 +30,24 @@ Standards we hold code to:
 - WordPress.com VIP guidelines.
 - Project-specific additions.
 
-What's enforced via linting and formatting, where the config lives, how to run it locally. Code review expectations — what reviewers look for, when to approve, when to block.
+What's enforced via linting and formatting, where the config lives, how to run it locally.
+
+## Code review
+
+Every PR into `main` requires a human code review before merging. All changes require review — there is no self-merge exception. See the [HM Engineering Handbook for full guidelines](https://engineering.hmn.md/how-we-work/process/reviews/).
+
+- Automated checks must pass before requesting a human review.
+- Reviewers focus on code quality — security, performance, architecture, and best practices. They are not doing QA.
+- Test your own work on `develop` before requesting review. Share a `develop` link and testing instructions in the PR so the reviewer can check acceptance criteria if needed.
+- After approval, the author merges, updates the Jira ticket with testing instructions if needed, and moves it to the Product Owner for review.
+
+List any project-specific things reviewers should also check here — for example, asset versioning rules, architectural principles to enforce, or accessibility and performance gates.
 
 ## Testing
 
-What's tested at each layer (unit, integration, end-to-end) and what each layer covers. How to run tests locally. Coverage expectations and how they're measured. CI integration — what runs on PRs, what blocks merge, where to see results.
+See [Testing](../Testing.md) for the full testing approach.
+
+What kinds of automated tests the project has — unit, integration, end-to-end — and what each one covers. How to run them locally. Coverage targets and how they're measured. Which CI checks block a PR from merging, and where to find the results.
 
 ## Branching & release
 

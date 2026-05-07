@@ -2,9 +2,9 @@
 
 **Summary.** How testing happens on the project — code-level tests, QA, browser and device coverage, performance, and accessibility.
 
-## Test layers
+## Types of tests
 
-What's tested at each layer:
+What each kind of test covers:
 
 - **Unit tests** — what they cover, where they live.
 - **Integration tests** — what they cover.
