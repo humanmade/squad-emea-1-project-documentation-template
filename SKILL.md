@@ -1,6 +1,6 @@
 ---
-name: hm-project-docs
-description: Use this skill whenever the user wants to create, scaffold, or populate project documentation for a Human Made WordPress project. Trigger on phrases like "set up project docs", "create project documentation", "scaffold docs for [project]", "start the wiki", "write up the architecture overview", "add a feature catalogue entry for X", "create an ADR for", or any request to produce or fill in structured project documentation. Also trigger when the user says "document this feature", "write up our release process", or "help me set up the project wiki". If there's a documentation task and an HM project is involved, use this skill.
+name: hm-emea-squad-1-project-docs
+description: Use this skill whenever the user wants to create, scaffold, or populate project documentation for a Human Made EMEA Squad 1 WordPress project. Trigger on phrases like "set up project docs", "create project documentation", "scaffold docs for [project]", "start the wiki", "write up the architecture overview", "add a feature catalogue entry for X", "create an ADR for", or any request to produce or fill in structured project documentation. Also trigger when the user says "document this feature", "write up our release process", or "help me set up the project wiki". If there's a documentation task and an HM EMEA Squad 1 project is involved, use this skill — it encodes the squad's preferred structure, tone, and HM defaults (native WordPress first, branching model, deployment conventions).
 ---
 
 # HM Project Documentation
